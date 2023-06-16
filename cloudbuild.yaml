@@ -1,0 +1,25 @@
+steps:
+  # Step 1: Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/seasee-globale/flask-app', '.']
+
+  # Step 2: Push the Docker image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/seasee-globale/flask-app']
+
+  # Step 3: Deploy the image to Cloud Run
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'flask-app'
+      - '--image'
+      - 'gcr.io/seasee-globale/flask-app'
+      - '--platform'
+      - 'managed'
+      - '--region'
+      - 'us-central1'
+      # Add other deployment options as needed
+
+images:
+  - 'gcr.io/seasee-globale/flask-app'
