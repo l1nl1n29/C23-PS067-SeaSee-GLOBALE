@@ -5,7 +5,7 @@ def init(app):
 
     
     app.config['MYSQL_HOST'] = '34.128.75.175'
-    #app.config['MYSQL_UNIX_SOCKET'] = '/cloudsql/seasee-globale:asia-southeast2:mysqlserver
+    app.config['MYSQL_UNIX_SOCKET'] = '/cloudsql/seasee-globale:asia-southeast2:mysqlserver'
     app.config['MYSQL_USER'] = 'root'
     app.config['MYSQL_PASSWORD'] = '12345678'
     app.config['MYSQL_DB'] = 'dbglobale'
