@@ -4,11 +4,11 @@ from flask_mysqldb import MySQL
 def init(app):
 
     
-    app.config['MYSQL_HOST'] = '34.128.75.175'
-    app.config['MYSQL_UNIX_SOCKET'] = '/mysqlserver/seasee-globale:asia-southeast2:mysqlserver'
+    app.config['MYSQL_HOST'] = '10.0.0.3'
+    app.config['MYSQL_UNIX_SOCKET'] = 'seasee-globale:asia-southeast2:cloudmysql'
     app.config['MYSQL_USER'] = 'root'
     app.config['MYSQL_PASSWORD'] = '12345678'
-    app.config['MYSQL_DB'] = 'dbglobale'
+    app.config['MYSQL_DB'] = 'dblinlin'
     app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
     return MySQL(app)
 
